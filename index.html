@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Placement / Internship Tracker</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1><i class="fas fa-briefcase"></i> Smart Placement / Internship Tracker</h1>
+        <p>Track, update, and manage your placement or internship applications</p>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <h2 class="section-title">Add New Application</h2>
+        <form id="applicationForm">
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Company Name *</label>
+                    <input type="text" id="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label>Role *</label>
+                    <input type="text" id="role" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Stage *</label>
+                    <select id="stage" required>
+                        <option value="">Select</option>
+                        <option>Applied</option>
+                        <option>Online Assessment (OA)</option>
+                        <option>Interview</option>
+                        <option>Offer</option>
+                        <option>Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Result *</label>
+                    <select id="result" required>
+                        <option value="">Select</option>
+                        <option>Pending</option>
+                        <option>Cleared</option>
+                        <option>Rejected</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Applied Date *</label>
+                    <input type="date" id="appliedDate" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn">
+                        <i class="fas fa-plus-circle"></i> Add Application
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+
+    <!-- Summary -->
+    <section class="summary-section">
+        <div class="summary-card applications">
+            <h3>Total Applications</h3>
+            <div id="totalApplications" class="summary-value">0</div>
+        </div>
+        <div class="summary-card interviews">
+            <h3>Interviews</h3>
+            <div id="totalInterviews" class="summary-value">0</div>
+        </div>
+        <div class="summary-card offers">
+            <h3>Offers</h3>
+            <div id="totalOffers" class="summary-value">0</div>
+        </div>
+        <div class="summary-card rejections">
+            <h3>Rejections</h3>
+            <div id="totalRejections" class="summary-value">0</div>
+        </div>
+    </section>
+
+    <!-- Table -->
+    <section class="list-section">
+        <h2 class="section-title">Your Applications</h2>
+
+        <table id="applicationsTable">
+            <thead>
+                <tr>
+                    <th>Company</th>
+                    <th>Role</th>
+                    <th>Stage</th>
+                    <th>Result</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="applicationsBody"></tbody>
+        </table>
+
+        <div id="noApplicationsMessage" class="no-applications">
+            <i class="fas fa-clipboard-list"></i>
+            <p>No Applications Added</p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="container">
+    <p>Data stored in browser localStorage</p>
+</footer>
+
+<!-- External JS -->
+<script src="script.js"></script>
+</body>
+</html>
